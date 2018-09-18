@@ -1,0 +1,19 @@
+
+<div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" data-target="#map">
+  <div class="card main">
+    <img class="card-img-top" src="{{res.backgroundImageURL}}" alt="Card image cap">
+    <p class="name">{{res.name}}</p>
+    <p class="category">{{res.category}}</p>
+  </div>
+  <div class="collapse" id="map">
+      <agm-map [latitude]="res.location.lat" [longitude]="res.location.lng">
+          <agm-marker [latitude]="res.location.lat" [longitude]="res.location.lng"></agm-marker>
+        </agm-map>
+    <div class="card-body">
+      <div *ngFor="let address of res.location.formattedAddress">
+        <p>{{address}}</p>
+      </div>
+    <p>@{{res.contact?.twitter}}</p>
+    </div>
+  </div>
+</div>

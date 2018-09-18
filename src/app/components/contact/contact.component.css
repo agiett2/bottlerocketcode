@@ -1,0 +1,10 @@
+span {
+  font-style: italic;
+}
+.main {
+  text-align: center;
+}
+.red {
+    background-color: red;
+    height: 5px;
+}

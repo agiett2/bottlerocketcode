@@ -1,0 +1,24 @@
+.img {
+  height: 180px;
+}
+.name {
+  bottom: 30px;
+}
+.category {
+  bottom: 4px;
+}
+.main {
+  color: #ffffff;
+}
+.main p {
+  position: absolute;
+  left: 16px;
+}
+
+agm-map {
+  height: 300px;
+}
+
+header { 
+  background-color:  #43e895;
+}
