@@ -1,19 +1,28 @@
 
-<div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" data-target="#map">
+<div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" [attr.data-target]="'#' + 'map' + i">
   <div class="card main">
     <img class="card-img-top" src="{{res.backgroundImageURL}}" alt="Card image cap">
     <p class="name">{{res.name}}</p>
     <p class="category">{{res.category}}</p>
   </div>
-  <div class="collapse" id="map">
-      <agm-map [latitude]="res.location.lat" [longitude]="res.location.lng">
+  <div class="collapse" [attr.id]="'map' + i">
+      <agm-map [zoom]="17" [latitude]="res.location.lat" [longitude]="res.location.lng">
           <agm-marker [latitude]="res.location.lat" [longitude]="res.location.lng"></agm-marker>
         </agm-map>
     <div class="card-body">
+      <h4>Location</h4>
+      <hr>
       <div *ngFor="let address of res.location.formattedAddress">
-        <p>{{address}}</p>
+        <span>{{address}}</span>
       </div>
-    <p>@{{res.contact?.twitter}}</p>
+      <br>
+      <ng-container *ngIf="res.contact?.twitter">
+        <div>
+            <h4>Contact</h4>
+            <hr>
+            Twitter: <span>@{{res.contact.twitter}}</span>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

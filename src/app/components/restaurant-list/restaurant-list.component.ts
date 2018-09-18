@@ -15,9 +15,7 @@ export class RestaurantListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData().subscribe((value: Reastuarants) => {
       if (value) {
-        console.log(value);
         this.reasturants = value.restaurants;
-        console.log(this.reasturants);
       }
     });
   }
