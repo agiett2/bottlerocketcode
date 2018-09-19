@@ -22,6 +22,6 @@ export class RestaurantListComponent implements OnInit {
   }
 
   toggleMap() {
-    return this.showmap = !this.showmap;
+    return (this.showmap = !this.showmap);
   }
 }

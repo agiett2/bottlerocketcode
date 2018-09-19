@@ -9,7 +9,6 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class ContactComponent implements OnInit {
   public contact: User;
-
   constructor(private flashMessges: FlashMessagesService) {}
 
   ngOnInit() {

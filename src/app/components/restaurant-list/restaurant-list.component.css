@@ -8,6 +8,7 @@
   float: left;
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
 p {
   font-family: 'AvenirNext-DemiBold';
@@ -23,18 +24,25 @@ header h1{
 }
 
 .name {
-
-}
-.category {
-}
-.main {
   color: #ffffff;
+  bottom: 60px;
+  left: 16px
 }
 
-.img p {
+.category { 
+  color: #ffff;
+  bottom: 10px;
+  left: 20px;
+}
+
+.main {
+  color: #ad8f8f;
+}
+
+/* .img p {
  position: absolute;
   color: #ffffff;
-}
+} */
 
 agm-map {
   height: 300px;

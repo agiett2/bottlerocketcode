@@ -49,3 +49,6 @@ img {
   height: 100%;
   padding: 2px 0px;
 }
+#forwardicon, #backicon, #refreshicon {
+cursor: pointer;
+}

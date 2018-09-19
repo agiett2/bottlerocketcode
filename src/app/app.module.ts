@@ -7,7 +7,6 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
 import { ContactComponent } from './components/contact/contact.component';
 
@@ -18,7 +17,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     RestaurantListComponent,
     ContactComponent,
   ],

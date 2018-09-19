@@ -1,13 +1,11 @@
 <header>
-  <img src="src/app/assests/ic_webBack.png" alt="back" id="backicon">
+  <img class="mt-2" src="src/app/assests/ic_webBack.png" alt="back" id="backicon" routerLink="/contact">
   <img src="src/app/assests/icon_map.png" alt="map" id="mapicon">
   <h1>Lunch Tyme</h1>
 </header>
 <div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" [attr.data-target]="'#' + 'map' + i">
-  <div class="img" [ngStyle]="{'background': '#fff url(' + res.backgroundImageURL + ') no-repeat'}">
+  <div class="img" [ngStyle]="{'background': '#fff url(' + res.backgroundImageURL + ') no-repeat 0 0 '}">
     <img src="src/app/assests/cellGradientBackground.png" alt="Card image cap">
-    <p class="name">{{res.name}}</p>
-    <p class="category">{{res.category}}</p>
   </div>
   <div class="collapse" [attr.id]="'map' + i">
     <agm-map [zoom]="17" [latitude]="res.location.lat" [longitude]="res.location.lng" [clickableIcons]="false">
