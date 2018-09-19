@@ -4,7 +4,7 @@
   <h1>Lunch Tyme</h1>
 </header>
 <div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" [attr.data-target]="'#' + 'map' + i">
-  <div class="img" [ngStyle]="{'background': '#fff url(' + res.backgroundImageURL + ') no-repeat 0 0 '}">
+  <div class="img" [ngStyle]="{'background': '#fff url(' + res.backgroundImageURL + ')'}">
     <img src="src/app/assests/cellGradientBackground.png" alt="Card image cap">
   </div>
   <div class="collapse" [attr.id]="'map' + i">
