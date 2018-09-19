@@ -11,6 +11,7 @@ import { Reastuarants } from '../../model/reasturants';
 export class RestaurantListComponent implements OnInit {
   reasturants: Reasturant[] = [];
   constructor(private dataService: DataService) {}
+  public showmap = false;
 
   ngOnInit() {
     this.dataService.getData().subscribe((value: Reastuarants) => {
@@ -18,5 +19,9 @@ export class RestaurantListComponent implements OnInit {
         this.reasturants = value.restaurants;
       }
     });
+  }
+
+  toggleMap() {
+    return this.showmap = !this.showmap;
   }
 }

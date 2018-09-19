@@ -1,51 +1,67 @@
-<div class="container">
-  <div class="main pb-2">
-    <h4>Let us know how we can help!</h4>
-    <p>If you are interested in hiring Bottle Rocket for your mobile project, please visit our <a href="#">"Hire Us"</a>
-      page.</p>
+<header>
+  <img src="src/app/assests/ic_webBack.png" alt="back" id="backicon">
+  <img src="src/app/assests/ic_webRefresh.png" alt="map" id="mapicon">
+  <img src="src/app/assests/ic_webForward.png" alt="back" id="backicon">
+</header>
+  <div class="bottlerocketheader">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p class="contact">contact</p>
+    <div class="bottlerocket">
+      <h4>bottle rocket</h4>
+    </div>
   </div>
+  <br>
+<img class="bottlerocketimg"src="src/app/assests/bottlerocket.png" alt="">
+<div class="main mt-4 container">
+  <h4>Let us know how we can help!</h4>
+  <p>If you are interested in hiring Bottle Rocket for your mobile project, please visit our <a href="#">"Hire Us"</a>
+    page.</p>
+</div>
 
 <hr class="red mb-5">
 <hr>
-  <h4 class="mt-5">About You</h4>
-  <span>*Indicates a required field</span>
-  <div class="card-body">
-    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <div class="form-group">
-        <label for="firstname">*First Name</label>
-        <input type="text" class="form-control" [(ngModel)]="contact.firstName" name="firstname" #contactFirstName="ngModel"
-          minlength="2" placeholder="First Name *" required>
-        <div *ngIf="contactFirstName?.errors?.required && contactFirstName.touched" class="invalid-feedback">
-          First name is required
-        </div>
-        <div *ngIf="contactFirstName?.errors?.minlength && contactFirstName.touched" class="invalid-feedback">
-          Must be at least 2 characters
-        </div>
+<h4 class="mt-5">About You</h4>
+<span>*Indicates a required field</span>
+<div class="card-body">
+  <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+      <label for="firstname">*First Name</label>
+      <input type="text" class="form-control" [(ngModel)]="contact.firstName" name="firstname" #contactFirstName="ngModel"
+        minlength="2" placeholder="First Name *" required>
+      <div *ngIf="contactFirstName?.errors?.required && contactFirstName.touched" class="invalid-feedback">
+        First name is required
       </div>
-      <div class="form-group">
-        <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" [ngClass]="{'is-invalid':contactLastName.errors?.required && contactLastName.touched || contactLastName.errors?.minlength}"
-          [(ngModel)]="contact.lastName" name="lastName" #contactLastName="ngModel" minlength="2" placeholder="Last Name *"
-          required>
-        <div *ngIf="contactLastName?.errors?.required && contactLastName.touched" class="invalid-feedback">
-          Last name is required
-        </div>
-        <div *ngIf="contactLastName?.errors?.minlength && contactLastName.touched" class="invalid-feedback">
-          Must be at least 2 characters
-        </div>
+      <div *ngIf="contactFirstName?.errors?.minlength && contactFirstName.touched" class="invalid-feedback">
+        Must be at least 2 characters
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" [ngClass]="{'is-invalid':contactEmail.errors?.required && contactEmail.touched || contactEmail.errors?.pattern}"
-          [(ngModel)]="contact.email" name="email" #contactEmail="ngModel" required placeholder="Email *" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
-        <div *ngIf="contactEmail?.errors?.required && contactEmail.touched" class="invalid-feedback">
-          Email is required
-        </div>
-        <div *ngIf="contactEmail?.errors?.pattern && contactEmail.touched" class="invalid-feedback">
-          Email is invalid
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':contactLastName.errors?.required && contactLastName.touched || contactLastName.errors?.minlength}"
+        [(ngModel)]="contact.lastName" name="lastName" #contactLastName="ngModel" minlength="2" placeholder="Last Name *"
+        required>
+      <div *ngIf="contactLastName?.errors?.required && contactLastName.touched" class="invalid-feedback">
+        Last name is required
       </div>
-      <input type="submit" value="Submit" class="btn btn-primary btn-block" disabled="!f.valild">
-    </form>
-  </div>
+      <div *ngIf="contactLastName?.errors?.minlength && contactLastName.touched" class="invalid-feedback">
+        Must be at least 2 characters
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" [ngClass]="{'is-invalid':contactEmail.errors?.required && contactEmail.touched || contactEmail.errors?.pattern}"
+        [(ngModel)]="contact.email" name="email" #contactEmail="ngModel" required placeholder="Email *" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+      <div *ngIf="contactEmail?.errors?.required && contactEmail.touched" class="invalid-feedback">
+        Email is required
+      </div>
+      <div *ngIf="contactEmail?.errors?.pattern && contactEmail.touched" class="invalid-feedback">
+        Email is invalid
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary btn-block" disabled="!f.valild">
+  </form>
 </div>

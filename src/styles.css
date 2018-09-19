@@ -1,4 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+    background-color: #43e895;
+    color: #ffffff;
+    height: 100%;
+    padding: 10px;
+}
+
 body {
-    font-family: 'AvenirNext-DemiBold'
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 50.5%;
+  margin: auto;
+}
+/* img { 
+    height: 300px;
+    width: 800px;
+    opacity: 90%;
+} */
+/* main {
+  padding: 30px 30px;
+  width: 80%;
+  padding: 0 10px 10px 0;
+  box-sizing: border-box;
+} */
+
+@media (max-width:2000px) and (min-width:1000px) {
+    #container {
+        width: 50.5%;
+        padding: 10px 10px;
+	}
+	.img, img { 
+        width: 100%;
+    }
+   
+}
+@media (max-width: 1000px) {
+	
+	#container {
+        width: 50.5%;
+        padding: 10px 10px;
+	}
+	img, img { 
+        width: 100%;
+    }
+	
+	
 }

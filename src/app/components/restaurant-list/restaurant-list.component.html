@@ -1,29 +1,39 @@
-
+<header>
+  <img src="src/app/assests/ic_webBack.png" alt="back" id="backicon">
+  <img src="src/app/assests/icon_map.png" alt="map" id="mapicon">
+  <h1>Lunch Tyme</h1>
+</header>
 <div *ngFor="let res of reasturants; let i = index" data-toggle="collapse" [attr.data-target]="'#' + 'map' + i">
-  <div class="card main">
-    <img class="card-img-top" src="{{res.backgroundImageURL}}" alt="Card image cap">
+  <div class="img" [ngStyle]="{'background': '#fff url(' + res.backgroundImageURL + ') no-repeat'}">
+    <img src="src/app/assests/cellGradientBackground.png" alt="Card image cap">
     <p class="name">{{res.name}}</p>
     <p class="category">{{res.category}}</p>
   </div>
   <div class="collapse" [attr.id]="'map' + i">
-      <agm-map [zoom]="17" [latitude]="res.location.lat" [longitude]="res.location.lng">
-          <agm-marker [latitude]="res.location.lat" [longitude]="res.location.lng"></agm-marker>
-        </agm-map>
-    <div class="card-body">
-      <h4>Location</h4>
-      <hr>
-      <div *ngFor="let address of res.location.formattedAddress">
-        <span>{{address}}</span>
+    <agm-map [zoom]="17" [latitude]="res.location.lat" [longitude]="res.location.lng" [clickableIcons]="false">
+      <agm-marker [latitude]="res.location.lat" [longitude]="res.location.lng"></agm-marker>
+    </agm-map>
+    <div>
+      <div class="mapheader">
+        <h2>{{res.name}}</h2>
+        <h4>{{res.category}}</h4>
       </div>
-      <br>
-      <ng-container *ngIf="res.contact?.twitter">
-        <div>
+      <div>
+        <h4>Location</h4>
+        <hr>
+        <div *ngFor="let address of res.location.formattedAddress">
+          <span>{{address}}</span>
+        </div>
+        <br>
+        <ng-container *ngIf="res.contact?.twitter">
+          <div>
             <h4>Contact</h4>
             <hr>
             <p>Phone: {{res.contact.formattedPhone}}</p>
             <p>Twitter: @{{res.contact.twitter}}</p>
-        </div>
-      </ng-container>
+          </div>
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>

@@ -8,3 +8,44 @@ span {
     background-color: red;
     height: 5px;
 }
+.contact {
+color: red;
+float: left;
+font-size: 20px;
+font-style: bold;
+padding: 0px 10px;
+}
+img { 
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+}
+
+.hamburger {
+  border-color: red;
+  border: 10px;
+  float: left;
+ 
+}
+.hamburger div {
+  width: 35px;
+  height: 5px;
+  background-color: red;  
+  border: 100px;
+  margin: 6px 0;
+}
+
+.bottlerocket{
+  float: right;
+  color: red;
+}
+
+.bottlerocketheader{
+  padding: 10px 0px;
+}
+
+.bottlerocketimg { 
+  width: 100%;
+  height: 100%;
+  padding: 2px 0px;
+}
